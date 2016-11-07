@@ -7,14 +7,39 @@
 
 <h2 class="w3-center">Manual Slideshow</h2>
 
-<div class="w3-content w3-display-container">
+<div class="container">
   <img class="mySlides" src="pic1.jpg" style="width:100%">
 
-  <button class="w3-btn-floating w3-display-left" onclick="plusDivs(-1),mySliderLoop(true)">left;</button>
-  <button class="w3-btn-floating w3-display-right" onclick="plusDivs(1),mySliderLoop(true)">right</button>
+  <button class="display-left" onclick="plusDivs(-1),mySliderLoop(true)">left</button>
+  <button class="display-right" onclick="plusDivs(1),mySliderLoop(true)">right</button>
 </div>
 
 <style>
+.container{
+  position:relative;
+  margin: auto;
+  max-width: 980px;
+}
+
+.display-right{
+  position: absolute;
+  top:50%;
+  right:0%;
+}
+
+.display-right:hover{
+  background-color: red;
+}
+
+.display-left{
+  position: absolute;
+  top:50%;
+  left:0%;
+}
+
+.display-left:hover{
+  background-color: red;
+}
 
 .mySlides{
   opacity:1;
