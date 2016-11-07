@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<title>Slider</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<body onload="mySliderLoop(false)">
+
+<h2 class="w3-center">Manual Slideshow</h2>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="pic1.jpg" style="width:100%">
+
+  <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1),mySliderLoop(true)">&#10094;</a>
+  <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1),mySliderLoop(true)">&#10095;</a>
+</div>
+
+<style>
+
+.mySlides{
+  opacity:1;
+  transition: opacity 1s;
+}
+
+.mySlides.fade{
+  opacity:0;
+}
+
+</style>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+var loopSlider;
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > 3) {slideIndex = 1}
+  if (n < 1) {slideIndex = 3}
+
+  x[0].src = "pic" + slideIndex + ".jpg";
+}
+
+function mySliderLoop(leave) {
+  if(leave){
+      window.clearInterval(loopSlider);
+      return;
+    }
+    loopSlider = setInterval(function(){ plusDivs(1)}, 2000);
+}
+</script>
+
+</body>
+</html>
+
